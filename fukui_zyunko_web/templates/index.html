@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>2026福井大学準硬式野球部サイト</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- ヘッダー -->
+<header>
+    <h2>⚾ 福井大学準硬式野球部</h2>
+    <nav>
+        <a href="/">ホーム</a>
+        <a href="results">試合結果</a>
+    </nav>
+
+</header>
+
+<!-- メイン -->
+<main>
+
+    <h1>福井大学準硬式野球部へようこそ</h1>
+
+    <div class="slider">
+        <img src="{{ url_for('static', filename='baseball1.jpg') }}" class="slide active">
+        <img src="{{ url_for('static', filename='baseball2.jpg') }}" class="slide">
+        <img src="{{ url_for('static', filename='baseball3.jpg') }}" class="slide">
+        <img src="{{ url_for('static', filename='baseball4.jpg') }}" class="slide">
+
+        <button class="prev" onclick="prevSlide()">‹</button>
+        <button class="next" onclick="nextSlide()">›</button>
+    </div>
+
+    <p>楽しく本気で野球やってます！</p>
+
+    <a href="https://instagram.com/fukudai.jyunkou" target="_blank">
+        <button>体験参加はこちら（インスタグラム）</button>
+    </a>
+
+    <!-- 活動内容 -->
+    <section>
+        <h2>活動内容</h2>
+        <p>活動日：金曜日・土曜日　13:00～の週2回活動</p>
+        <p>グラウンド：上伏野球場（福井大学教育学部附属総合自然教育センター）</p>
+        <p>試合や大会にも積極的に参加しています。</p>
+    </section>
+
+    <!-- 部の特徴 -->
+    <section>
+        <h2>部の特徴</h2>
+        <p>エンジョイベイスボール！</p>
+        <p>楽しく真剣にプレーできる環境です。</p>
+    </section>
+
+    <!-- 実績 -->
+    <section>
+        <h2>2026実績</h2>
+        <p>まだなし</p>
+        <p></p>
+    </section>
+
+    <section>
+        <h2>新1年生の方へ</h2>
+        <p>練習は基本ジャージで行い緩くやってます。ですが試合はしっかりあるので安心してください！</p>
+        <p>１年生でも練習試合であればばんばん試合に出します。</p>
+        <p>大会については4/11までに入部を決めてくれれば春季大会のリーグ戦に出場でき、</p>
+        <p>5/16までに入部を決めてくれれば春季大会の本選に出場できます。</p>
+        <p>ぜひ早めに体験に来てみてください！配車の手配はします。</p>
+        <p>体験申し込みはインスタグラムのDMからお願いします。</p>
+    </section>
+
+ <h2>スケジュール</h2>
+
+    <div id="calendar"></div>
+
+    <!-- FullCalendar -->
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+
+<a href="/result">
+    <button>試合結果を入力する</button>
+</a>
+<a href="/results">
+    <button>試合結果を見る</button>
+</a>
+</main>
+
+<!-- フッター -->
+<footer>
+    <p>© 2026 野球部</p>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+        initialView: 'dayGridMonth',
+
+        events: [
+            { title: '春季大会リーグ戦期間', start: '2026-04-18', end: '2026-05-18'},
+            { title: '春季大会', start: '2026-06-06', end: '2026-06-09'},
+            { title: '予備日', start: '2026-06-09', backgroundColor: 'gray'},
+            { title: '交流大会', start: '2026-06-13', end: '2026-06-15'},
+            { title: '全国大会in石川（補助）', start: '2026-08-21', end: '2026-08-27'},
+            { title: '秋季大会', start: '2026-10-02', end: '2026-10-06'}
+        ]
+    });
+
+    calendar.render();
+});
+</script>
+
+</body>
+</html>
+
+<script>
+let current = 0;
+const slides = document.querySelectorAll(".slide");
+
+function showSlide(index) {
+    slides.forEach(s => s.classList.remove("active"));
+    slides[index].classList.add("active");
+}
+
+function nextSlide() {
+    current = (current + 1) % slides.length;
+    showSlide(current);
+}
+
+function prevSlide() {
+    current = (current - 1 + slides.length) % slides.length;
+    showSlide(current);
+}
+
+setInterval(nextSlide, 3000);
+</script>
+

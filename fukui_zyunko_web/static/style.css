@@ -1,0 +1,186 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f6f4f8;
+    text-align: center;
+}
+
+/* ヘッダー */
+header {
+    background: #222;
+    color: white;
+    padding: 10px;
+    text-align: left;
+}
+
+header h2 {
+    margin: 0;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    }
+
+nav {
+    margin-top: 10px;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+/* メイン */
+main {
+    padding: 60px 20px;
+}
+
+.slider {
+    position: relative;
+    width: 80%;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+.slide {
+    width: 100%;
+    display: none;
+    border-radius: 10px;
+}
+
+.active {
+    display: block;
+}
+
+/* ボタン */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#calendar {
+    width: 90%;
+    margin: 30px auto;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+h1 {
+    font-size: 28px;
+    padding-bottom: 80px;
+    margin-top:20px auto;
+}
+
+.container {
+    width: 90%;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+button {
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top:20px;
+}
+
+/* フッター */
+footer {
+    background: #222;
+    color: white;
+    padding: 10px;
+    bottom: 0;
+    width: 100%;
+}
+
+section {
+    background: white;
+    margin: 30px auto;
+    padding: 20px;
+    width: 80%;
+    border-radius: 10px;
+}
+
+section h2 {
+    margin-bottom: 10px;
+}
+
+section p {
+    color: #555;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th {
+    background: #222;
+    color: white;
+    padding: 12px;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background: #f1f1f1;
+}
+
+.score {
+    font-weight: bold;
+}
+
+.delate{
+    background: #e74c3c;
+}
+
+.win{
+    color:#2ecc71;
+    font-weight:bold;
+}
+
+.lose{
+    color:#e74c3c;
+    font-weight:bold;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        margin-top: 60px;
+    }
+
+    h1 {
+        font-size: 22px;
+    }
+    section{
+        width: 90%;
+    }
+}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>試合結果</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <a href="/">← ホーム</a>
+</header>
+
+<h1>試合結果</h1>
+
+<div class="container">
+    <table>
+        <tr>
+            <th>日付</th>
+            <th>相手</th>
+            <th>スコア</th>
+            <th>操作</th>
+        </tr>
+
+        {% for row in data %}
+        <tr>
+            <td>{{ row[3] }}</td>
+            <td>{{ row[1] }}</td>
+            <td class="score">{{ row[2] }}</td>
+            <td>
+                 <a href="/edit/{{ row[0] }}">
+                     <button>編集</button>
+                </a>
+                <a href="/delete/{{ row[0] }}">
+                     <button class="delete">削除</button>
+                 </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+<a href="/">
+    <button>ホームに戻る</button>
+</a>
+
+</body>
+</html>
